@@ -9,7 +9,6 @@ SPINE is a tool to transform existing represesentations into interpretable ones.
 
 ### Requirements
 
-python 2.7 <br>
 numpy <br>
 pytorch 0.3 (along with torchvision) <br>
 tqdm
