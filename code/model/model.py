@@ -45,7 +45,7 @@ class SPINEModel(torch.nn.Module):
 
 
 	def _getASLLoss(self, h):
-		temp = torch.mean(h, dim=1) - self.rho_star
+		temp = torch.mean(h, dim=0) - self.rho_star
 		temp = temp.clamp(min=0)
 		return torch.sum(temp * temp) / self.hdim
 
