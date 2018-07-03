@@ -1,6 +1,6 @@
 ## SPINE: SParse Interpretable Neural Embeddings
 
-SPINE is a tool to transform existing represesentations into interpretable ones. It is a novel extension of the k-sparse autoencoder that is able to enforce stricter sparsity constraints. It is highly expressive and facilitates non linear transformations in contrast to existing linear matrix factorization based approaches. 
+SPINE is a tool to transform existing representations into more interpretable ones. It is a novel extension of the k-sparse autoencoder that is able to enforce stricter sparsity constraints. It is highly expressive and facilitates non-linear transformations in contrast to existing linear matrix factorization based approaches. 
 
 
 <center><img src="images/autoencoder.png"</center>
@@ -43,7 +43,7 @@ python3 main.py --input input_file \
 		 --hdim 1000
 ```
 
-A note of caution: Different input representations might require very different hyper-parameter setting. For instance, based on the range of the input representations, one should set how much noise to add for the denoising auto-encoder. For glove embeddings we found 0.4 noise level to be best, whereas for word2vec 0.2 noise level was more suitable (0.4 for word2vec was too much). Hence, you might have to play with a few a few hyper-parameter settings to attain the best accuracy/interpretability trade-off. Further, we also suggest visualizating the obtained representations.
+A note of caution: Different input representations might require very different hyper-parameter setting. For instance, based on the range of the input representations, one should set how much noise to add for the denoising auto-encoder. For glove embeddings we found 0.4 noise level to be best, whereas for word2vec 0.2 noise level was more suitable. Hence, you might have to play with a few hyper-parameter settings to attain the best accuracy/interpretability trade-off. Further, we also suggest visualizating the obtained representations.
 
 ### Word Embeddings
 
