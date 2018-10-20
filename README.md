@@ -2,6 +2,7 @@
 
 SPINE is a tool to transform existing representations into more interpretable ones. It is a novel extension of the k-sparse autoencoder that is able to enforce stricter sparsity constraints. It is highly expressive and facilitates non-linear transformations in contrast to existing linear matrix factorization based approaches. 
 
+[Link to our AAAI 2018 paper](https://arxiv.org/pdf/1711.08792.pdf)
 
 <center><img src="images/autoencoder.png"</center>
 <center>A k-sparse autoencoder. For an input X, an autoencoder attempts to construct an output X' at its output layer that is close to X. In a k-sparse autoencoder, only a few hidden units are active for any given input (denoted by the colored units in the figure).</center>
