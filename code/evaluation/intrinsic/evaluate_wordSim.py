@@ -46,18 +46,18 @@ def getSimilarityScoreForWords(w1,w2):
 
 def evaluate():
 	global embeddings
-	print "--- loading data..."
+	print("--- loading data...")
 	embeddings = loadData()
 	data = loadTestData()
-	print "#words = ", len(data['words'])
-	print "#scores = ", len(data['sim_scores'])
-	print "--- checking..."
+	print("#words = ", len(data['words']))
+	print("#scores = ", len(data['sim_scores']))
+	print("--- checking...")
 	pred_scores = []
 	invalid = 0
 	pred_scores = [ [getSimilarityScoreForWords(w1w2[0],w1w2[1]),human_score] for w1w2,human_score in zip(data['words'], data['sim_scores']) ]			
 	pred_scores = np.array( [ val for val in pred_scores if val[0]!=-1 ] )
 	#print pred_scores
 	spearman_rank_coeff,sp_rho = spearmanr( pred_scores[:,0], pred_scores[:,1] )
-	print "total, valid,spearman_rank_coeff,sp_rho ", len(data['words']),len(pred_scores), spearman_rank_coeff,sp_rho
+	print("total, valid,spearman_rank_coeff,sp_rho ", len(data['words']),len(pred_scores), spearman_rank_coeff,sp_rho)
 		
 evaluate()
