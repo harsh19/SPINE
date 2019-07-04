@@ -20,20 +20,22 @@ def get_everything(categories, val_fraction, name, data_dir="data/"):
     data_test_X, data_test_y = get_Xy(data_test)
     data_X, data_y = get_Xy(data_train)
     
-    print "len(data_X):",len(data_X)
-    print "len(data_test_X):",len(data_test_X)
+    print("len(data_X):",len(data_X))
+    print("len(data_test_X):",len(data_test_X))
     val_threshold = int( (1.0 - val_fraction)* len(data_X) )
 
     data_train_X, data_train_y = data_X[:val_threshold], data_y[:val_threshold]
     data_val_X, data_val_y = data_X[val_threshold:], data_y[val_threshold:]
     
-    pickle.dump(data_train_X, open(data_dir+name+"_train_X.p", 'w'))
-    pickle.dump(data_train_y, open(data_dir+name+"_train_y.p", 'w'))
-    pickle.dump(data_val_X, open(data_dir+name+"_val_X.p", 'w'))
-    pickle.dump(data_val_y, open(data_dir+name+"_val_y.p", 'w'))
-    pickle.dump(data_test_X, open(data_dir+name+"_test_X.p", 'w'))
-    pickle.dump(data_test_y, open(data_dir+name+"_test_y.p", 'w'))
+    pickle.dump(data_train_X, open(data_dir+name+"_train_X.p", 'wb'))
+    pickle.dump(data_train_y, open(data_dir+name+"_train_y.p", 'wb'))
+    pickle.dump(data_val_X, open(data_dir+name+"_val_X.p", 'wb'))
+    pickle.dump(data_val_y, open(data_dir+name+"_val_y.p", 'wb'))
+    pickle.dump(data_test_X, open(data_dir+name+"_test_X.p", 'wb'))
+    pickle.dump(data_test_y, open(data_dir+name+"_test_y.p", 'wb'))
 
     
 get_everything(computer_categories,0.2,'news_computer')
 get_everything(religion_categories,0.2,'news_religion')
+
+

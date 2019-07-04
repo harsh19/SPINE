@@ -37,7 +37,7 @@ def loadVectors():
         vals = np.array( [float(val) for val in vals[1:]] )
         vectors[word] = vals
     embedding_size = len(vals)
-    print "embedding_size = ",embedding_size
+    print("embedding_size = ",embedding_size)
     return vectors
 
 
@@ -69,16 +69,16 @@ def trainAndTest(x_splits, y_splits, clf):
         if score > best_val:
           flag = True
           best_val = score
-        print "Val Score = ", score
+        print("Val Score = ", score)
     score = clf.score(x_splits[2], y_splits[2])
     if flag:
       best_test = score
-    print "Test Score = ", score
+    print("Test Score = ", score)
 
 def main():
     loadVectors()
     num_classes = int(sys.argv[2])
-    print "num_classes = ",num_classes
+    print("num_classes = ",num_classes)
     classifiers = None
     if num_classes==2:
         classifiers = [
@@ -116,13 +116,13 @@ def main():
         texts = pickle.load( open(sys.argv[idx],"r") )
         if len(texts)>0:
             feats = np.array( map(getFeats,texts) )
-            print "feats : ",feats.shape
+            print("feats : ",feats.shape)
             all_feats.append( feats )
             idx+=1
             cur_labels = np.array(pickle.load( open(sys.argv[idx],"r") ) )
             #cur_labels = getOneHot(cur_labels, max(cur_labels)+1)
             labels.append( cur_labels )
-            print "cur_labels : ",cur_labels.shape
+            print("cur_labels : ",cur_labels.shape)
             idx+=1
         else:
             idx+=2
@@ -136,5 +136,5 @@ def main():
 
 
 main()
-print 'best val', best_val
-print 'best test', best_test
+print('best val', best_val)
+print('best test', best_test)

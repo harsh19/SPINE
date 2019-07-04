@@ -119,7 +119,7 @@ def main():
             idx+=2
             labels.append([])
             all_feats.append([])
-    print "Done loading data"
+    print("Done loading data")
 
     best_test = 0.0
     best_clf = None
@@ -132,7 +132,7 @@ def main():
         if score>best:
           best = score
           best_clf = clf
-    print "best_test for this split= ", best_test
+    print("best_test for this split= ", best_test)
     #print "best_test = ", best_test
     #print "best= ", best, best_clf
 

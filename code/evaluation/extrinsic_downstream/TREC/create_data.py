@@ -1,7 +1,7 @@
 from nltk import word_tokenize
 import math
 import numpy as np
-import cPickle as pickle
+import pickle
 import random
 
 np.random.seed(42)
@@ -31,7 +31,8 @@ def get_Xy(lines):
   return X, y
 
 def read_lines(filename):
-  return open(filename).readlines()
+  print("filename = ",filename)
+  return open(filename,'r', encoding="ISO-8859-1").readlines()
 
 task = "qa"
 
@@ -47,7 +48,7 @@ X, y = get_Xy(train_lines)
 
 val_number = int(math.floor(0.9 * len(X)))
 
-print val_number
+print(val_number)
 
 train_X, train_y = X[:val_number], y[:val_number]
 
@@ -58,4 +59,4 @@ names = ['train_X.pickle', 'train_y.pickle', 'val_X.pickle', 'val_y.pickle', 'te
 data_files = [train_X, train_y, val_X, val_y, test_X, test_y]
 
 for data, name in zip(data_files, names):
-  pickle.dump(data, open("data/"+task+"_"+name, 'w'))
+  pickle.dump(data, open("data/"+task+"_"+name, 'wb'))
