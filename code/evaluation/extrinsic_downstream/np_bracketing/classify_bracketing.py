@@ -104,13 +104,13 @@ def main():
     labels = []
     idx = 3
     while idx<8:
-        texts = pickle.load( open(sys.argv[idx],"r") )
+        texts = pickle.load( open(sys.argv[idx],"rb") )
         if len(texts)>0:
-            feats = np.array( map(getFeats,texts) )
+            feats = np.array( [getFeats(t) for t in texts] )
             #print "feats : ",feats.shape
             all_feats.append( feats )
             idx+=1
-            cur_labels = np.array(pickle.load( open(sys.argv[idx],"r") ) )
+            cur_labels = np.array(pickle.load( open(sys.argv[idx],"rb") ) )
             #cur_labels = getOneHot(cur_labels, max(cur_labels)+1)
             labels.append( cur_labels )
             #print "cur_labels : ",cur_labels.shape
