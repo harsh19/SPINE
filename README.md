@@ -10,6 +10,7 @@ SPINE is a tool to transform existing representations into more interpretable on
 
 ### Requirements
 
+python 3 </br>
 numpy <br>
 pytorch 0.3 (along with torchvision) <br>
 tqdm
