@@ -15,6 +15,8 @@ numpy <br>
 pytorch 0.3 (along with torchvision) <br>
 tqdm
 
+#### UPDATE [4th Feb 2020]: A pytorch 1.3 compatible version of this codebase has been released by Jacob Danovitch at following URL: https://github.com/jacobdanovitch/SPINE
+
 ### Input format requirements
 
 The input embeddings, that you wish to transform, should be in the following format. Each line contains the word and its continuous representation in a space separated format
